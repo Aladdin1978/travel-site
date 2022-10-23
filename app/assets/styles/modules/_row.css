@@ -1,32 +1,6 @@
 .row {
-  @mixin clearFix;
-
   &--t-padding {
     padding-top: 80px;
-  }
-
-  &--gutters {
-    margin-right: -4rem;
-  }
-
-  &--gutters-large {
-    margin-right: -6.25rem;
-  }
-
-  &--gutter-small {
-    margin-right: -2.8125rem;
-  }
-
-  &--gutters > div {
-    padding-right: 4rem;
-  }
-
-  &--gutters-large > div {
-    padding-right: 6.25rem;
-  }
-
-  &--gutters-small > div {
-    padding-right: 2.8125rem;
   }
 
   &__b-margin-until-medium {
@@ -34,33 +8,48 @@
   }
 
   @mixin atMedium {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    &--gutters {
+      column-gap: 5.3%;
+    }
+
+    &--gutters-large {
+      column-gap: 8%;
+    }
+
+    &--gutter-small {
+      column-gap: 3.6%;
+    }
     &__b-margin-until-medium {
       margin-bottom: 0;
     }
-  }
-
-  @mixin atMedium {
-    &__medium-4 {
-      float: left;
-      width: 33.33%;
+    &__Large-1,
+    &__Large-2,
+    &__Large-3,
+    &__Large-4,
+    &__Large-5,
+    &__Large-6,
+    &__Large-7,
+    &__Large-8,
+    &__Large-9,
+    &__Large-10,
+    &__Large-11,
+    &__Large-12 {
+      grid-column: span 12;
     }
 
-    &__medium-4--larger {
-      width: 37%;
+    &__medium-4 {
+      grid-column: span 4;
     }
 
     &__medium-6 {
-      float: left;
-      width: 50%;
+      grid-column: span 6;
     }
 
     &__medium-8 {
-      float: left;
-      width: 66.66%;
-    }
-
-    &__medium-8--smaller {
-      width: 63%;
+      grid-column: span 8;
     }
   }
 
@@ -72,26 +61,15 @@
 
   @mixin atLarge {
     &__Large-4 {
-      float: left;
-      width: 33.33%;
-    }
-
-    &__Large-4--larger {
-      width: 37%;
+      grid-column: span 4;
     }
 
     &__Large-6 {
-      float: left;
-      width: 50%;
+      grid-column: span 6;
     }
 
     &__Large-8 {
-      float: left;
-      width: 66.66%;
-    }
-
-    &__Large-8--smaller {
-      width: 63%;
+      grid-column: span 8;
     }
   }
 
@@ -109,11 +87,9 @@
 
   &--equal-height-at-Large {
     @mixin atLarge {
-      display: flex;
-    }
-    & > div {
-      float: none;
-      display: flex;
+      & > div {
+        display: flex;
+      }
     }
   }
 }
