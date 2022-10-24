@@ -10,7 +10,12 @@
     max-width: 976px;
   }
 
-  &--no-padding-until-Laerge {
+  &--narrow {
+    border: red solid;
+    max-width: 470px;
+  }
+
+  &--no-padding-until-Large {
     padding-left: 0;
     padding-right: 0;
 
